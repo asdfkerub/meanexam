@@ -1,0 +1,13 @@
+<a href="#!/dashboard">Home</a> | <a href="#!/question/{{single_q._id}}">Go back to question</a> | <a href="/logout">Logout</a>
+<h1>Q: {{single_q.question}}</h1>
+<h3>D: {{single_q.description}}</h3>
+
+  <form name="newA_form">
+    <div ng-messages="newA_form.new_A.$error" style="color:maroon" role="alert">
+      <div ng-message="required" class="alert alert-danger" role="alert"> Please fill up question box</div>
+      <div ng-message="minlength" class="alert alert-danger" role="alert"> Question is too short</div>
+    </div>
+    <label>Question: <textarea ng-model="newa.answer" name="new_A" id="new_A"  ng-minlength="5" required></textarea></label><br>
+    <label>Description: <textarea ng-model="newa.details"></textarea></label><br>
+    <a href="#!/dashboard">Cancel</a> <input ng-disabled="newA_form.$invalid" type="submit" value="Submit" ng-click="adda(newa)">
+  </form>

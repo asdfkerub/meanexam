@@ -1,0 +1,11 @@
+<a href="/dashboard">Home</a> | <a href="/logout">Logout</a>
+<h1>New Question</h1>
+<form name="newQ_form">
+  <div ng-messages="newQ_form.new_Q.$error" style="color:maroon" role="alert">
+    <div ng-message="required" class="alert alert-danger" role="alert"> Please fill up question box</div>
+    <div ng-message="minlength" class="alert alert-danger" role="alert"> Question is too short</div>
+  </div>
+  <label>Question: <textarea ng-model="newq.question" name="new_Q" id="new_Q" ng-model="new_Q"  ng-minlength="10" required></textarea></label><br>
+  <label>Description: <textarea ng-model="newq.description"></textarea></label><br>
+  <a href="#!/dashboard">Cancel</a> <input ng-disabled="newQ_form.$invalid" type="submit" value="Submit" ng-click="addq(newq)">
+</form>
